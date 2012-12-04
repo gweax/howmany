@@ -1,7 +1,10 @@
 (function () {
 
     var countdown, countedListFound, countedListMissing, gameControl, itemList,
-        gameSelection;
+        gameSelection, gameStats;
+        
+        
+    gameStats = new GameStats();
         
         
     countedListFound = new CountedList(".hm-found");
@@ -22,6 +25,12 @@
         countedListMissing.setLevel("error");
         
         gameControl.stop();
+        
+        gameStats.set("timeLeft", 0);
+        gameStats.set("state", "end");
+        gameStats.set("missing", remaining);
+        gameStats.set("found", itemList.found);
+        gameStats.track();
     });
     countdown.on("tick", function (event) {
         if (event.data === 10) {
@@ -47,6 +56,12 @@
             countedListMissing.setLevel("error");
         });
         countedListMissing.setLevel("error");
+        
+        gameStats.set("timeLeft", countdown.remaining);
+        gameStats.set("state", "cancel");
+        gameStats.set("missing", remaining);
+        gameStats.set("found", itemList.found);
+        gameStats.track();
     });
     gameControl.on("input", function (event) {
         itemList.tickOff(event.data.trim());
@@ -78,6 +93,7 @@
         countedListFound.reset();
         countedListMissing.reset();
         gameControl.reset();
+        gameStats.reset();
         // don't reset itemList
         
         countdown.setTime(game.minutes * 60);
@@ -99,8 +115,18 @@
             countdown.setLevel("success");
             countedListFound.setLevel("success");
             gameControl.stop();
+            
+            gameStats.set("state", "finished");
+            gameStats.set("timeLeft", countdown.remaining);
+            gameStats.set("found", itemList.found);
+            gameStats.set("missing", []);
+            gameStats.track();
         });
+        
+        gameStats.set("name", game.name);
+        gameStats.set("lang", lang);
     });
     
     
 }());
+

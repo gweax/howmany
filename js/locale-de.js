@@ -1,3 +1,5 @@
+/*global I18n:false */
+
 I18n.locales.de = {
     "shortTitle": "Wie viele",
     "longTitle": "Wie viele <span class=\"hm-title\"></span> fallen Dir in <span class=\"hm-minutes\"></span> ein?",

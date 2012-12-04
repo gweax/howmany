@@ -1,3 +1,6 @@
+/*jslint sloppy:true */
+/*global document:false, EventEmitter:false, I18n:false, Levelable:false */
+
 function GameControl(selector) {
     var element, input, startButton, cancelButton;
 
@@ -5,18 +8,18 @@ function GameControl(selector) {
     input = element.querySelector("input");
     startButton = element.querySelector(".game-control_button-start");
     cancelButton = element.querySelector(".game-control_button-cancel");
-    
+
     startButton.addEventListener("click", this.start.bind(this), false);
     cancelButton.addEventListener("click", this.cancel.bind(this), false);
 
     input.addEventListener("focus", this.start.bind(this), false);
     input.addEventListener("input", this.propagate.bind(this), false);
     input.addEventListener("keydown", function (event) {
-            if (event.keyCode === 13) {
+        if (event.keyCode === 13) {
             event.preventDefault();
         }
     }, false);
-    
+
     this.element = input; // for levelization
     this.startButton = startButton;
     this.cancelButton = cancelButton;
@@ -34,18 +37,18 @@ GameControl.prototype.start = function (event) {
     if (this.running) {
         return;
     }
-    
+
     if (event.target === this.element && this.stopped) {
         // allow restart by clicking on button only
         return;
     }
-    
+
     this.setRunning(true);
-    
+
     if (event.target === this.startButton) {
         this.element.focus();
     }
-    
+
     if (this.stopped) {
         this.trigger("restart");
     } else {
@@ -57,12 +60,12 @@ GameControl.prototype.cancel = function () {
     if (!this.running) {
         return;
     }
-    
+
     this.setRunning(false);
     this.stopped = true;
 
     this.startButton.innerHTML = I18n.translate("Try again");
-    
+
     this.trigger("cancel");
 };
 
@@ -72,7 +75,7 @@ GameControl.prototype.stop = function (event) {
 
     this.element.blur();
     this.startButton.innerHTML = I18n.translate("Try again");
-    
+
     this.trigger("stop");
 };
 

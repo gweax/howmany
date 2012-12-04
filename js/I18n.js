@@ -1,12 +1,14 @@
-I18n = {
+/*jslint sloppy:true */
+
+var I18n = {
     "defaultLanguage": "en",
-    
+
     "translate": function (str, lang) {
         lang = lang || I18n.defaultLanguage;
-        
+
         return I18n.locales[lang][str] || str;
     },
-    
+
     "locales": {
         "de": {
             "How many": "Wie viele",

@@ -1,3 +1,6 @@
+/*jslint sloppy:true, plusplus:true */
+/*global document:false, Levelable:false */
+
 function CountedList(selector) {
     var element, counter, list, items, count;
 
@@ -5,9 +8,9 @@ function CountedList(selector) {
     counter = element.querySelector(".counted-list_counter");
     list = element.querySelector(".counted-list_list");
     items = list.querySelectorAll("li");
-    
+
     count = items.length;
-    
+
     if (count > 0) {
         counter.innerText = count;
     }
@@ -21,20 +24,20 @@ function CountedList(selector) {
 CountedList.prototype = {
     "addItem": function (text) {
         var element = this.createItemElement(text);
-        
+
         this.list.appendChild(element);
         this.count++;
         this.counter.innerText = this.count;
     },
-    
+
     "createItemElement": function (text) {
         var element = document.createElement("li");
         element.className = "list-item list-item-flow";
         element.innerText = text;
-        
+
         return element;
     },
-    
+
     "reset": function () {
         this.list.innerHTML = "";
         this.counter.innerHTML = "";

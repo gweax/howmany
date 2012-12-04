@@ -1,3 +1,6 @@
+/*jslint sloppy:true */
+/*global window:false, EventEmitter:false */
+
 function GameSelection() {
 
     // TODO: refactor
@@ -5,34 +8,34 @@ function GameSelection() {
     if (GameSelection.singleton) {
         return GameSelection.singleton;
     }
-    
+
     this.games = {};
-    
+
     var self = this;
 
     window.addEventListener("hashchange", function (event) {
         var gameName = window.location.hash.substring(1);
-        
+
         if (self.games.hasOwnProperty(gameName)) {
             self.trigger("game", {
                 "data": self.games[gameName]
             });
         }
-        
+
     }, false);
-    
+
     window.addEventListener("load", function (event) {
-    
+
         var gameName = window.location.hash.substring(1) || Object.keys(self.games)[0];
-        
+
         if (gameName) {
             self.trigger("game", {
                 "data": self.games[gameName]
             });
         }
-    
+
     }, false);
-    
+
     GameSelection.singleton = this;
 }
 
@@ -46,7 +49,7 @@ GameSelection.prototype.registerGame = function (name, data) {
         name = name.name;
     }
 
-    this.games[name] = data;    
+    this.games[name] = data;
 };
 
 
