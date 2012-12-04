@@ -1,0 +1,30 @@
+GameSelection.registerGame({
+    "name": "beatles-us-no-1-hits",
+    "category": "Music",
+    "title": "The Beatles Number 1 hits in the US",
+    "description": "",
+    "minutes": 2,
+    "source": "http://en.wikipedia.org/wiki/The_Beatles_discography#Singles",
+    "items": [
+        "Love Me Do",
+        "She Loves You",
+        "I Want to Hold Your Hand",
+        "Can't Buy Me Love",
+        "A Hard Day's Night",
+        "I Feel Fine",
+        "Eight Days a Week",
+        "Ticket to Ride",
+        "Help!|Help",
+        "Yesterday",
+        "We Can Work It Out",
+        "Paperback Writer",
+        "Penny Lane",
+        "All You Need Is Love",
+        "Hello, Goodbye|Hello Goodbye",
+        "Hey Jude",
+        "Get Back",
+        "Come Together",
+        "Let It Be",
+        "The Long and Winding Road"
+    ]
+});

@@ -1,0 +1,21 @@
+.counted-list {
+    clear: both;
+    margin-bottom: 1em;
+    padding: 0.5em;
+}
+
+.counted-list_counter {
+    display: block;
+    float: left;
+    text-align: right;
+    min-width: 1.5em;
+    font-size: 3em;
+    line-height: 1;
+    margin-right: 0.5em;
+}
+
+.counted-list_list {
+    line-height: 1.7;
+    margin: 0;
+    padding: 0;
+}

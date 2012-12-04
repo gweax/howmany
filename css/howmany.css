@@ -1,0 +1,14 @@
+.hm-countdown {
+    position: absolute;
+    top: 0;
+    right: 0.3em;
+    padding: 0.35em 0.1em;
+}
+
+.hm-control {
+    position: relative;
+}
+
+.hm-instructions {
+    line-height: 1.4;
+}

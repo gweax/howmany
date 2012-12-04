@@ -1,0 +1,18 @@
+.countdown {
+    display: inline-block;
+    font-size: 2em;
+    min-width: 1.5em;
+    padding: 0.5em;
+}
+
+.countdown-large {
+    font-size: 3em;
+}
+
+.countdown-small {
+    font-size: 1em;
+}
+
+.countdown .is-finished {
+    
+}

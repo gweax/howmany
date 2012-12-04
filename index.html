@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>How many</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link href="css/normalize.css" rel="stylesheet">
+        <link href="css/global.css" rel="stylesheet">
+        <link href="css/counted-list.css" rel="stylesheet">
+        <link href="css/countdown.css" rel="stylesheet">
+        <link href="css/game-control.css" rel="stylesheet">
+        <link href="css/game-selection.css" rel="stylesheet">
+        <link href="css/howmany.css" rel="stylesheet">
+        
+        <script>
+            function guessLanguage() {
+                return (navigator.language || navigator.userLanguage || "en").substring(0, 2);
+            }
+        
+            var lang = localStorage.getItem("lang") || guessLanguage();
+            
+            document.documentElement.setAttribute("lang", lang);
+        </script>
+    </head>
+    
+    <body>
+        <header>
+            <h1>How many <span class="hm-title"></span> can you think of in <span class="hm-minutes"></span>?</h1>
+        </header>
+        
+        <p class="hm-instructions">
+            Focus the field below and type in as many items as you can think of. Valid items are added immediately, so
+            there's no need of hitting enter. Don't bother with capital letters. However, do take care of spelling.
+        </p>
+        
+        <div class="game-control hm-control">
+            <form>
+                <label class="game-control_label"></label>
+                <input type="text" class="game-control_input" autocomplete="off" spellcheck="off">
+                <div class="countdown hm-countdown"></div>
+                <div class="game-control_hint hm-description"></div>
+                
+                <div class="game-control_bar">
+                    <button type="button" class="button button-primary game-control_button-start">Start Game</button>
+                    <button type="button" class="button game-control_button-cancel" disabled>Give up</button>
+                </div>
+            </form>
+        </div>
+        
+        <div class="counted-list cf hm-found">
+            <div class="counted-list_counter"></div>
+            <ul class="counted-list_list">
+            </ul>
+        </div>
+
+        <div class="counted-list cf hm-missing">
+            <div class="counted-list_counter"></div>
+            <ul class="counted-list_list">
+            </ul>
+        </div>
+        
+        <nav class="game-selection">
+            <ul data-lang="en" data-language="English" class="game-selection_list">
+                <li class="game-selection_item"><a class="game-selection_link" href="#beatles-us-no-1-hits">The Beatles Number 1 hits in the US</a></li>
+                <li class="game-selection_item"><a class="game-selection_link" href="#books-of-the-new-testament">Books of the New Testament</a></li>
+                <li class="game-selection_item"><a class="game-selection_link" href="#chemical-elements">Chemical Elements</a></li>
+                <li class="game-selection_item"><a class="game-selection_link" href="#extended-css-colornames">CSS colors</a></li>
+                <li class="game-selection_item"><a class="game-selection_link" href="#gryffindor-quidditch-players">Gryffindor Quidditch players</a></li>
+                <li class="game-selection_item"><a class="game-selection_link" href="#james-bond-movies">James Bond Movies</a></li>
+                <li class="game-selection_item"><a class="game-selection_link" href="#named-moons-of-jupiter">Named Moons of Jupiter</a></li>
+                <li class="game-selection_item"><a class="game-selection_link" href="#soccer-world-champions">Soccer World Champions</a></li>
+                <li class="game-selection_item"><a class="game-selection_link" href="#spells-in-harry-potter">Spells in Harry Potter</a></li>
+                <li class="game-selection_item"><a class="game-selection_link" href="#states-of-the-eu">States of the European Union</a></li>
+                <li class="game-selection_item"><a class="game-selection_link" href="#ubunut-releases">Ubuntu code names</a></li>
+                <li class="game-selection_item"><a class="game-selection_link" href="#us-states">US States</a></li>
+                <li class="game-selection_item"><a class="game-selection_link" href="#zodiac-signs">Zodiac Signs</a></li>
+            </ul>
+
+            <ul data-lang="de" data-language="Deutsch" class="game-selection_list">
+                <li class="game-selection_item"><a class="game-selection_link" href="#books-of-the-new-testament">Bücher des Neuen Testaments</a></li>
+                <li class="game-selection_item"><a class="game-selection_link" href="#us-states">Bundesstaaten der USA</a></li>
+                <li class="game-selection_item"><a class="game-selection_link" href="#chemical-elements">Chemische Elemente</a></li>
+                <li class="game-selection_item"><a class="game-selection_link" href="#deutsche-bundeskanzler">Deutsche Bundeskanzler</a></li>
+                <li class="game-selection_item"><a class="game-selection_link" href="#soccer-world-champions">Fussballweltmeister</a></li>
+                <li class="game-selection_item"><a class="game-selection_link" href="#haltestellen-der-linie-1-in-karlsruhe">Haltestellen der Linie 1 in Karlsruhe</a></li>
+                <li class="game-selection_item"><a class="game-selection_link" href="#states-of-the-eu">Länder der Europäischen Union</a></li>
+                <li class="game-selection_item"><a class="game-selection_link" href="#ostfriesische-inseln">Ostfriesische Inseln</a></li>
+                <li class="game-selection_item"><a class="game-selection_link" href="#zodiac-signs">Tierkreiszeichen</a></li>
+            </ul>
+        </nav>
+        
+        <script src="js/I18n.js"></script>
+        <script src="js/locale-en.js"></script>
+        <script src="js/locale-de.js"></script>
+
+        <script>
+            var domStrings, selector, element;
+            
+            I18n.defaultLanguage = document.documentElement.getAttribute("lang");   
+        
+            domStrings = {
+                "title": "shortTitle",
+                "h1": "longTitle",
+                ".hm-instructions": "instructions",
+                ".game-control_button-start": "Start Game",
+                ".game-control_button-cancel": "Give up"
+            };
+            
+            for (selector in domStrings) {
+                element = document.querySelector(selector);
+                
+                if (element) {
+                    element.innerHTML = I18n.translate(domStrings[selector]);
+                }
+            }
+        </script>
+        
+        <script src="js/EventEmitter.js"></script>
+        <script src="js/Levelable.js"></script>
+        <script src="js/CountedList.js"></script>
+        <script src="js/Countdown.js"></script>
+        <script src="js/GameControl.js"></script>
+        <script src="js/GameSelection.js"></script>
+        <script src="js/ItemList.js"></script>
+
+        <script src="GameController2.js"></script>
+
+        <script src="games/us-states.js"></script>
+        <script src="games/beatles-us-no-1-hits.js"></script>
+        <script src="games/books-of-the-new-testament.js"></script>
+        <script src="games/chemical-elements.js"></script>
+        <script src="games/deutsche-bundeskanzler.js"></script>
+        <script src="games/extended-css-colornames.js"></script>    
+        <script src="games/gryffindor-quidditch-players.js"></script>
+        <script src="games/haltestellen-der-linie-1-in-karlsruhe.js"></script>
+        <script src="games/james-bond-movies.js"></script>
+        <script src="games/named-moons-of-jupiter.js"></script>
+        <script src="games/ostfriesische-inseln.js"></script>
+        <script src="games/soccer-world-champions.js"></script>
+        <script src="games/spells-in-harry-potter.js"></script>
+        <script src="games/states-of-the-eu.js"></script>
+        <script src="games/ubuntu-releases.js"></script>
+        <script src="games/zodiac-signs.js"></script>
+    </body>
+</html>
