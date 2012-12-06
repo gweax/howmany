@@ -1,6 +1,7 @@
 .game-control {
     text-align: center;
-    margin-bottom: 1em;
+    margin: 0 auto 1em;
+    max-width: 600px;
 }
 
 .game-control_label {

@@ -9,8 +9,9 @@ html {
 body {
     color: #444;
     height: 100%;
-    max-width: 40em;
+    max-width: 768px;
     margin: 0 auto;
+    padding: 1em;
 }
 
 
@@ -231,3 +232,17 @@ input[type=text].m-error {
 }
 
 
+footer {
+    border-top: 1px dashed #666;
+    text-align: center;
+    padding: 0.3em;
+}
+
+.footer-link {
+    color: #c09853;
+}
+
+.footer-link:focus,
+.footer-link:hover {
+    color: #c07631;
+}
