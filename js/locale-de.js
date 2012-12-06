@@ -1,3 +1,5 @@
+/*! (c) Matthias Reuter | GPLv3 License | github.com/gweax/howmany */
+
 /*global I18n:false */
 
 I18n.locales.de = {

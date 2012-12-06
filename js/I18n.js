@@ -1,3 +1,5 @@
+/*! (c) Matthias Reuter | GPLv3 License | github.com/gweax/howmany */
+
 /*jslint sloppy:true */
 
 var I18n = {

@@ -1,3 +1,5 @@
+/*! (c) Matthias Reuter | GPLv3 License | github.com/gweax/howmany */
+
 /*jslint sloppy:true, regexp:true */
 /*global EventEmitter:false, localStorage:false, navigator:false, XMLHttpRequest:false */
 
