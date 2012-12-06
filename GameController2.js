@@ -1,3 +1,9 @@
+/*! (c) Matthias Reuter | GPLv3 License | github.com/gweax/howmany */
+
+/*jslint sloppy:true */
+/*global GameStats:false, CountedList:false, Countdown:false, GameControl:false,
+ItemList:false, GameSelection:false, GameStats:false, document:false */
+
 (function () {
 
     var countdown, countedListFound, countedListMissing, gameControl, itemList,
