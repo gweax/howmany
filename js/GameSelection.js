@@ -1,61 +1,64 @@
 /*! (c) Matthias Reuter | GPLv3 License | github.com/gweax/howmany */
 
 /*jslint sloppy:true */
-/*global window:false, EventEmitter:false */
+/*global window:false, EventEmitter:false, I18n:false */
 
 function GameSelection() {
-
-    // TODO: refactor
-    // I only need this as long as games are loaded synchronously
-    if (GameSelection.singleton) {
-        return GameSelection.singleton;
-    }
-
-    this.games = {};
-
-    var self = this;
-
-    window.addEventListener("hashchange", function (event) {
-        var gameName = window.location.hash.substring(1);
-
-        if (self.games.hasOwnProperty(gameName)) {
-            self.trigger("game", {
-                "data": self.games[gameName]
-            });
-        }
-
-    }, false);
-
-    window.addEventListener("load", function (event) {
-
-        var gameName = window.location.hash.substring(1) || Object.keys(self.games)[0];
-
-        if (gameName) {
-            self.trigger("game", {
-                "data": self.games[gameName]
-            });
-        }
-
-    }, false);
-
-    GameSelection.singleton = this;
+    window.addEventListener("hashchange", this.loadGame.bind(this), false);
+    window.addEventListener("load", this.loadGame.bind(this), false);
 }
 
 GameSelection.prototype = Object.create(EventEmitter.prototype);
 
-GameSelection.prototype.registerGame = function (name, data) {
-    if (typeof name === "object") {
-        data = {
-            "en": name
-        };
-        name = name.name;
+GameSelection.prototype.selectEntry = function (gameName) {
+    var selector, selectedEntry;
+
+    selectedEntry = document.querySelector(".selected");
+
+    if (selectedEntry) {
+        selectedEntry.classList.remove("selected");
     }
 
-    this.games[name] = data;
+    selector = "[href='#" + gameName + "']";
+
+    selectedEntry = document.querySelector("[data-lang=" + I18n.defaultLanguage + "] " + selector);
+
+    if (!selectedEntry) {
+        selectedEntry = document.querySelector(selector);
+    }
+
+    if (selectedEntry) {
+        selectedEntry.classList.add("selected");
+    }
 };
 
+GameSelection.prototype.loadGame = function (event) {
+    var gameName, request, self;
 
-// I was dumb
-GameSelection.registerGame = function (name, data) {
-    GameSelection.singleton.registerGame(name, data);
+    gameName = window.location.hash.substring(1);
+
+    if (!gameName) {
+        window.location.hash = "#us-states";
+        return;
+    }
+
+    self = this;
+
+    request = new XMLHttpRequest();
+    request.open("GET", "games/" + gameName + ".js", false);
+    request.onreadystatechange = function () {
+        var game;
+
+        if (request.readyState === 4 && request.status === 200) {
+            game = JSON.parse(request.responseText);
+
+            self.selectEntry(gameName);
+
+            self.trigger("game", {
+                "data": game
+            });
+        }
+    };
+    request.send(null);
 };
+

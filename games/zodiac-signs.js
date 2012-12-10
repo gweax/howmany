@@ -1,4 +1,4 @@
-GameSelection.registerGame("zodiac-signs", {
+{
     "en": {
         "name": "zodiac-signs",
         "category": "",
@@ -44,4 +44,4 @@ GameSelection.registerGame("zodiac-signs", {
             "Fische"
         ]
     }
-});
+}

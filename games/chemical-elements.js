@@ -1,4 +1,4 @@
-GameSelection.registerGame("chemical-elements", {
+{
     "en": {
         "name": "chemical-elements",
         "category": "Chemistry",
@@ -257,5 +257,5 @@ GameSelection.registerGame("chemical-elements", {
             */
         ]
     }
-});
+}
 

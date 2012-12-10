@@ -1,4 +1,4 @@
-GameSelection.registerGame("us-states", {
+{
     "en": {
         "name": "us-states",
         "category": "Geography",
@@ -120,4 +120,4 @@ GameSelection.registerGame("us-states", {
             "Wyoming"
         ]
     }
-});
+}

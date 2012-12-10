@@ -1,4 +1,4 @@
-GameSelection.registerGame("ostfriesische-inseln", {
+{
     "de": {
         "name": "ostfriesische-inseln",
         "category": "",
@@ -16,4 +16,5 @@ GameSelection.registerGame("ostfriesische-inseln", {
             "Wangerooge"
         ]
     }
-});
+}
+

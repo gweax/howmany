@@ -1,4 +1,4 @@
-GameSelection.registerGame("name", {
+{
     "en": {
         "name": "",
         "category": "",
@@ -9,4 +9,5 @@ GameSelection.registerGame("name", {
         "items": [
         ]
     }
-});
+}
+

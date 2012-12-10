@@ -1,4 +1,4 @@
-GameSelection.registerGame("soccer-world-champions", {
+{
     "en": {
         "name": "soccer-world-champions",
         "category": "Sports",
@@ -36,4 +36,4 @@ GameSelection.registerGame("soccer-world-champions", {
             "Uruguay"
         ]
     }
-});
+}

@@ -1,4 +1,4 @@
-GameSelection.registerGame("books-of-the-new-testament", {
+{
     "en": {
         "name": "books-of-the-new-testament",
         "category": "Religion",
@@ -74,4 +74,4 @@ GameSelection.registerGame("books-of-the-new-testament", {
             "Offenbarung"
         ]
     }
-});
+}

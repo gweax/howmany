@@ -1,4 +1,4 @@
-GameSelection.registerGame("deutsche-bundeskanzler", {
+{
     "de" : {
         "name": "deutsche-bundeskanzler",
         "category": "Politics",
@@ -18,4 +18,5 @@ GameSelection.registerGame("deutsche-bundeskanzler", {
             "Angela Merkel|Merkel"
         ]
     }
-});
+}
+

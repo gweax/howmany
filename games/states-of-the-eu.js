@@ -1,4 +1,4 @@
-GameSelection.registerGame("states-of-the-eu", {
+{
     "en": {
         "name": "states-of-the-eu",
         "category": "Geography",
@@ -74,4 +74,4 @@ GameSelection.registerGame("states-of-the-eu", {
             "Zypern"
         ]
     }
-});
+}

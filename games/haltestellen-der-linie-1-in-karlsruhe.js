@@ -1,4 +1,4 @@
-GameSelection.registerGame("haltestellen-der-linie-1-in-karlsruhe", {
+{
     "de": {
         "name": "haltestellen-der-linie-1-in-karlsruhe",
         "category": "",
@@ -35,4 +35,5 @@ GameSelection.registerGame("haltestellen-der-linie-1-in-karlsruhe", {
             "Badeniaplatz"
         ]
     }
-});
+}
+

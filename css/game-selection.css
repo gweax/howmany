@@ -24,7 +24,8 @@
 }
 
 .game-selection_link:hover,
-.game-selection_link:focus {
+.game-selection_link:focus,
+.game-selection_link.selected {
     background-color: #ccc;
 }
 
