@@ -24,7 +24,9 @@
             "Oneiric Ocelot",
             "Precise Pangolin",
             "Quantal Quetzal",
-            "Raring Ringtail"
+            "Raring Ringtail",
+            "Saucy Salamander",
+            "Trusty Tahr"
         ]
     }
 }
