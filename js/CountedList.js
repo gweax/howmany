@@ -14,7 +14,7 @@ function CountedList(selector) {
     count = items.length;
 
     if (count > 0) {
-        counter.innerText = count;
+        counter.textContent = count;
     }
 
     this.element = element;
@@ -29,13 +29,13 @@ CountedList.prototype = {
 
         this.list.appendChild(element);
         this.count++;
-        this.counter.innerText = this.count;
+        this.counter.textContent = this.count;
     },
 
     "createItemElement": function (text) {
         var element = document.createElement("li");
         element.className = "list-item list-item-flow";
-        element.innerText = text;
+        element.appendChild(document.createTextNode(text));
 
         return element;
     },
