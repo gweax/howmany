@@ -45,7 +45,7 @@ GameSelection.prototype.loadGame = function (event) {
     self = this;
 
     request = new XMLHttpRequest();
-    request.open("GET", "games/" + gameName + ".js", false);
+    request.open("GET", "games/" + gameName + ".json", false);
     request.onreadystatechange = function () {
         var game;
 
