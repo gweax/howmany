@@ -10,6 +10,7 @@
             "Austria",
             "Belgium",
             "Bulgaria",
+            "Croatia",
             "Cyprus",
             "Czech Republic",
             "Denmark",
@@ -36,7 +37,7 @@
             "United Kingdom"
         ]
     },
-    
+
     "de": {
         "name": "states-of-the-eu",
         "category": "Geography",
@@ -55,6 +56,7 @@
             "Griechenland",
             "Irland",
             "Italien",
+            "Kroatien",
             "Lettland",
             "Litauen",
             "Luxemburg",
