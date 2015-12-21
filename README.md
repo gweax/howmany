@@ -1,8 +1,6 @@
-howmany
-=======
+# howmany
 
-Play at http://gweax.de/howmany/
-
+Play at http://gweax.github.io/howmany/
 
 Howmany - See how many US States you can think of in 5 minutes (and other things)
 Copyright (C) 2012 Matthias Reuter
