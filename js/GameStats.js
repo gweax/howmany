@@ -31,7 +31,7 @@ GameStats.prototype.reset = function () {
 };
 
 GameStats.prototype.track = function () {
-    var request = new XMLHttpRequest();
-    request.open("POST", "check.php", false);
-    request.send(JSON.stringify(this.data));
+    //var request = new XMLHttpRequest();
+    //request.open("POST", "check.php", false);
+    //request.send(JSON.stringify(this.data));
 };
