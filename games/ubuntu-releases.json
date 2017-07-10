@@ -3,8 +3,8 @@
         "name": "ubuntu-releases",
         "category": "Computer",
         "title": "Ubuntu code names",
-        "minutes": 2,
-        "description": "",
+        "minutes": 3,
+        "description": "Up to version 17.04",
         "source": "http://en.wikipedia.org/wiki/Ubuntu_(operating_system)#Releases",
         "items": [
             "Warty Warthog",
@@ -29,7 +29,10 @@
             "Trusty Tahr",
             "Utopic Unicorn",
             "Vivid Vervet",
-            "Wily Werewolf"
+            "Wily Werewolf",
+            "Xenial Xerus",
+            "Yakkety Yak",
+            "Zesty Zapus"
         ]
     }
 }
