@@ -4,7 +4,7 @@
         "category": "Computer",
         "title": "Ubuntu code names",
         "minutes": 2,
-        "description": "",
+        "description": "From 4.10 to 22.04",
         "source": "http://en.wikipedia.org/wiki/Ubuntu_(operating_system)#Releases",
         "items": [
             "Warty Warthog",
@@ -29,7 +29,20 @@
             "Trusty Tahr",
             "Utopic Unicorn",
             "Vivid Vervet",
-            "Wily Werewolf"
+            "Wily Werewolf",
+            "Xeniax Xerus",
+            "Yakkety Yak",
+            "Zesty Zapus",
+            "Artful Aardvark",
+            "Bionic Beaver",
+            "Cosmic Cuttlefish",
+            "Disco Dingo",
+            "Eoan Ermine",
+            "Focal Fossa",
+            "Groovy Gorilla",
+            "Hirsute Hippo",
+            "Impish Indri",
+            "Jammy Jellyfish"
         ]
     }
 }
