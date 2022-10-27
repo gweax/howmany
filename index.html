@@ -4,7 +4,7 @@
         <title>How many</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        
+
         <link href="css/normalize.css" rel="stylesheet">
         <link href="css/global.css" rel="stylesheet">
         <link href="css/counted-list.css" rel="stylesheet">
@@ -12,42 +12,42 @@
         <link href="css/game-control.css" rel="stylesheet">
         <link href="css/game-selection.css" rel="stylesheet">
         <link href="css/howmany.css" rel="stylesheet">
-        
+
         <script>
             function guessLanguage() {
                 return (navigator.language || navigator.userLanguage || "en").substring(0, 2);
             }
-        
+
             var lang = localStorage.getItem("lang") || guessLanguage();
-            
+
             document.documentElement.setAttribute("lang", lang);
         </script>
     </head>
-    
+
     <body>
         <header>
             <h1>How many <span class="hm-title"></span> can you think of in <span class="hm-minutes"></span>?</h1>
         </header>
-        
+
         <p class="hm-instructions">
             Focus the field below and type in as many items as you can think of. Valid items are added immediately, so
             there's no need of hitting enter. Don't bother with capital letters. However, do take care of spelling.
         </p>
-        
+
         <div class="game-control hm-control">
             <form>
                 <label class="game-control_label"></label>
                 <input type="text" class="game-control_input" autocomplete="off" spellcheck="off">
                 <div class="countdown hm-countdown"></div>
                 <div class="game-control_hint hm-description"></div>
-                
+
                 <div class="game-control_bar">
                     <button type="button" class="button button-primary game-control_button-start">Start Game</button>
                     <button type="button" class="button game-control_button-cancel" disabled>Give up</button>
                 </div>
             </form>
         </div>
-        
+
         <div class="counted-list cf hm-found">
             <div class="counted-list_counter"></div>
             <ul class="counted-list_list">
@@ -59,7 +59,7 @@
             <ul class="counted-list_list">
             </ul>
         </div>
-        
+
         <nav class="game-selection cf">
             <ul data-lang="en" data-language="English" class="game-selection_list">
                 <li class="game-selection_item"><a class="game-selection_link" href="#beatles-us-no-1-hits">The Beatles Number 1 hits in the US</a></li>
@@ -67,6 +67,7 @@
                 <li class="game-selection_item"><a class="game-selection_link" href="#chemical-elements">Chemical Elements</a></li>
                 <li class="game-selection_item"><a class="game-selection_link" href="#extended-css-colornames">CSS colors</a></li>
                 <li class="game-selection_item"><a class="game-selection_link" href="#gryffindor-quidditch-players">Gryffindor Quidditch players</a></li>
+                <li class="game-selection_item"><a class="game-selection_link" href="#html-elements">HTML Elements</a></li>
                 <li class="game-selection_item"><a class="game-selection_link" href="#james-bond-movies">James Bond Movies</a></li>
                 <li class="game-selection_item"><a class="game-selection_link" href="#named-moons-of-jupiter">Named Moons of Jupiter</a></li>
                 <li class="game-selection_item"><a class="game-selection_link" href="#soccer-world-champions">Soccer World Champions</a></li>
@@ -89,20 +90,20 @@
                 <li class="game-selection_item"><a class="game-selection_link" href="#zodiac-signs">Tierkreiszeichen</a></li>
             </ul>
         </nav>
-        
+
         <footer>
             &copy; 2012 by Matthias Reuter | <a href="mailto:howmany@gweax.de" class="footer-link">Contact</a> | <a href="https://github.com/gweax/howmany" class="footer-link">Code at github</a>
         </footer>
-        
+
         <script src="js/I18n.js"></script>
         <script src="js/locale-en.js"></script>
         <script src="js/locale-de.js"></script>
 
         <script>
             var domStrings, selector, element;
-            
-            I18n.defaultLanguage = document.documentElement.getAttribute("lang");   
-        
+
+            I18n.defaultLanguage = document.documentElement.getAttribute("lang");
+
             domStrings = {
                 "title": "shortTitle",
                 "h1": "longTitle",
@@ -110,16 +111,16 @@
                 ".game-control_button-start": "Start Game",
                 ".game-control_button-cancel": "Give up"
             };
-            
+
             for (selector in domStrings) {
                 element = document.querySelector(selector);
-                
+
                 if (element) {
                     element.innerHTML = I18n.translate(domStrings[selector]);
                 }
             }
         </script>
-        
+
         <script src="js/EventEmitter.js"></script>
         <script src="js/Levelable.js"></script>
         <script src="js/CountedList.js"></script>
@@ -129,6 +130,6 @@
         <script src="js/ItemList.js"></script>
         <script src="js/GameStats.js"></script>
         <script src="GameController2.js"></script>
-        
+
     </body>
 </html>
