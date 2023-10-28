@@ -5,7 +5,8 @@
         "title": "US States",
         "description": "",
         "minutes": 5,
-        "source": "http://en.wikipedia.org/wiki/States_of_the_United_States#List_of_states",
+        "source": "https://en.wikipedia.org/wiki/States_of_the_United_States#List_of_states",
+        "label": "State",
         "items": [
             "Alabama",
             "Alaska",
@@ -59,14 +60,15 @@
             "Wyoming"
         ]
     },
-    
+
     "de" : {
         "name": "us-states",
         "category": "Geography",
         "title": "Bundesstaaten der USA",
         "description": "",
         "minutes": 5,
-        "source": "http://de.wikipedia.org/wiki/Liste_der_Bundesstaaten_der_Vereinigten_Staaten_von_Amerika",
+        "source": "https://de.wikipedia.org/wiki/Liste_der_Bundesstaaten_der_Vereinigten_Staaten_von_Amerika",
+        "label": "Bundesstaat",
         "items": [
             "Alabama",
             "Alaska",

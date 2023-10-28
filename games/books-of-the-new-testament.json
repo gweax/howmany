@@ -5,7 +5,8 @@
         "title": "Books of the New Testament",
         "description": "For brevity, we're looking for the short names. So don't type <i>First Epistel to the People of somewhere</i> but <i>1 Somewhereians</i>.",
         "minutes": 3,
-        "source": "http://en.wikipedia.org/wiki/New_testament#Books",
+        "source": "https://en.wikipedia.org/wiki/New_testament#Books",
+        "label": "Name",
         "items": [
             "Matthew",
             "Mark",
@@ -44,6 +45,7 @@
         "description": "Gesucht sind die Kurzformen, also <em>1. Soundsoer</em> statt <em>Erster Brief an die Gemeinde in Soundso</em>",
         "minutes": 3,
         "source": "http://de.wikipedia.org/wiki/Neues_Testament",
+        "label": "Name",
         "items": [
             "Matthäus",
             "Markus",

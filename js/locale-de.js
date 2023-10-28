@@ -10,5 +10,6 @@ I18n.locales.de = {
     "Give up": "Aufgeben",
     "Try again": "Nochmal",
     "minutes": "Minuten",
-    "minute": "Minute"
+    "minute": "Minute",
+    "source": "Quelle"
 };

@@ -5,6 +5,12 @@
 }
 
 .game-control_label {
+    display: block;
+    text-align: left;
+}
+
+.game-control_input-wrapper {
+    position: relative;
 }
 
 .game-control_input {
@@ -24,7 +30,7 @@
 }
 
 .game-control_bar {
-    text-align: center;            
+    text-align: center;
 }
 
 .game-control_button {

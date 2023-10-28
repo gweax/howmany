@@ -5,7 +5,8 @@
         "title": "Ostfriesische Inseln",
         "description": "Gesucht sind die bewohnten ostfriesischen Inseln",
         "minutes": 1,
-        "source": "http://de.wikipedia.org/wiki/Ostfriesische_Inseln",
+        "source": "https://de.wikipedia.org/wiki/Ostfriesische_Inseln",
+        "label": "Insel",
         "items": [
             "Borkum",
             "Juist",

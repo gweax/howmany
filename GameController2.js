@@ -7,12 +7,13 @@ ItemList:false, GameSelection:false, GameStats:false, document:false */
 (function () {
 
     var countdown, countedListFound, countedListMissing, gameControl, itemList,
-        gameSelection, gameStats;
-        
-        
+        gameSelection, gameStats, sourceElement;
+
+    sourceElement = document.querySelector('.hm-source');
+
     gameStats = new GameStats();
-        
-        
+
+
     countedListFound = new CountedList(".hm-found");
     countedListMissing = new CountedList(".hm-missing");
 
@@ -21,17 +22,19 @@ ItemList:false, GameSelection:false, GameStats:false, document:false */
     countdown = new Countdown(".hm-countdown");
     countdown.on("end", function (event) {
         var remaining;
-    
+
         this.setLevel("error");
-        
+
         remaining = itemList.getRemainingItems();
         remaining.forEach(function (item) {
             countedListMissing.addItem(item);
         });
         countedListMissing.setLevel("error");
-        
+
+        sourceElement.classList.remove('m-hidden');
+
         gameControl.stop();
-        
+
         gameStats.set("timeLeft", 0);
         gameStats.set("state", "end");
         gameStats.set("missing", remaining);
@@ -43,8 +46,8 @@ ItemList:false, GameSelection:false, GameStats:false, document:false */
             this.setLevel("warning");
         }
     });
-    
-    
+
+
 
     gameControl = new GameControl(".hm-control");
     gameControl.on("start", function (event) {
@@ -52,17 +55,19 @@ ItemList:false, GameSelection:false, GameStats:false, document:false */
     });
     gameControl.on("cancel", function (event) {
         var remaining;
-        
+
         countdown.pause();
         countedListFound.setLevel("success");
-        
+
         remaining = itemList.getRemainingItems();
         remaining.forEach(function (item) {
             countedListMissing.addItem(item);
             countedListMissing.setLevel("error");
         });
         countedListMissing.setLevel("error");
-        
+
+        sourceElement.classList.remove('m-hidden');
+
         gameStats.set("timeLeft", countdown.remaining);
         gameStats.set("state", "cancel");
         gameStats.set("missing", remaining);
@@ -81,36 +86,43 @@ ItemList:false, GameSelection:false, GameStats:false, document:false */
 
         countdown.start();
     });
-    
+
 
 
     gameSelection = new GameSelection(".hm-selection");
     gameSelection.on("game", function (event) {
-        var lang, game, minutesText;
-        
+        var lang, game, minutesText, sourceLink;
+
         lang = I18n.defaultLanguage;
-        
+
         if (!(event.data.hasOwnProperty(lang))) {
             lang = Object.keys(event.data)[0];
         }
         game = event.data[lang];
-    
+
         countdown.reset();
         countedListFound.reset();
         countedListMissing.reset();
         gameControl.reset();
         gameStats.reset();
         // don't reset itemList
-        
+
         countdown.setTime(game.minutes * 60);
-        
+
         // REFACTOR: own component
         document.querySelector(".hm-title").innerHTML = game.title;
 
         minutesText = game.minutes + " " + I18n.translate(game.minutes === 1 ? "minute" : "minutes");
         document.querySelector(".hm-minutes").innerHTML = minutesText;
         document.querySelector(".hm-description").innerHTML = game.description;
-    
+        document.querySelector(".hm-label").innerHTML = game.label || '';
+
+        // REFACTOR: own component
+        sourceLink = sourceElement.querySelector('a');
+        sourceLink.innerHTML = game.source;
+        sourceLink.setAttribute('href', game.source);
+        sourceElement.classList.add('m-hidden');
+
         itemList = new ItemList(game.items);
         itemList.on("success", function (event) {
             countedListFound.addItem(event.item);
@@ -121,18 +133,20 @@ ItemList:false, GameSelection:false, GameStats:false, document:false */
             countdown.setLevel("success");
             countedListFound.setLevel("success");
             gameControl.stop();
-            
+
+            sourceElement.classList.remove('m-hidden');
+
             gameStats.set("state", "finished");
             gameStats.set("timeLeft", countdown.remaining);
             gameStats.set("found", itemList.found);
             gameStats.set("missing", []);
             gameStats.track();
         });
-        
+
         gameStats.set("name", game.name);
         gameStats.set("lang", lang);
     });
-    
-    
+
+
 }());
 

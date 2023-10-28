@@ -5,7 +5,8 @@
         "title": "James Bond movies",
         "description": "The Eon Productions films only",
         "minutes": 3,
-        "source": "http://en.wikipedia.org/wiki/James_Bond#Films",
+        "source": "https://en.wikipedia.org/wiki/List_of_James_Bond_films",
+        "label": "Film title",
         "items": [
             "Dr. No|Dr No",
             "From Russia with Love",

@@ -12,3 +12,11 @@
 .hm-instructions {
     line-height: 1.4;
 }
+
+.hm-source.m-hidden {
+    display: none;
+}
+
+.hm-source a {
+    color: #3a87ad;
+}

@@ -5,7 +5,8 @@
         "title": "Zodiac Signs",
         "description": "",
         "minutes": 1,
-        "source": "http://en.wikipedia.org/wiki/Zodiac#The_twelve_signs",
+        "source": "https://en.wikipedia.org/wiki/Zodiac#The_twelve_signs",
+        "label": "Name",
         "items": [
             "Aries",
             "Taurus",
@@ -21,14 +22,15 @@
             "Pisces"
         ]
     },
-    
+
     "de": {
         "name": "zodiac-signs",
         "category": "",
         "title": "Tierkreiszeichen",
         "description": "",
         "minutes": 1,
-        "source": "http://de.wikipedia.org/wiki/Tierkreiszeichen#Die_zw.C3.B6lf_Tierkreiszeichen_des_Zodiaks",
+        "source": "https://de.wikipedia.org/wiki/Tierkreiszeichen#Die_zw.C3.B6lf_Tierkreiszeichen_des_Zodiaks",
+        "label": "Name",
         "items": [
             "Widder",
             "Stier",

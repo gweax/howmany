@@ -4,8 +4,9 @@
         "category": "Web Development",
         "title": "CSS colors",
         "description": "",
-        "source": "http://www.w3.org/TR/css3-color/#svg-color",
         "minutes": 3,
+        "source": "https://www.w3.org/TR/css3-color/#svg-color",
+        "label": "Color name",
         "items": [
             "aliceblue",
             "antiquewhite",
@@ -158,4 +159,3 @@
         ]
     }
 }
-

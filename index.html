@@ -36,9 +36,11 @@
 
         <div class="game-control hm-control">
             <form>
-                <label class="game-control_label"></label>
-                <input type="text" class="game-control_input" autocomplete="off" spellcheck="off">
-                <div class="countdown hm-countdown"></div>
+                <label for="input" class="hm-label game-control_label"></label>
+                <div class="game-control_input-wrapper">
+                    <input type="text" id="input" class="game-control_input" autocomplete="off" spellcheck="false">
+                    <div class="countdown hm-countdown"></div>
+                </div>
                 <div class="game-control_hint hm-description"></div>
 
                 <div class="game-control_bar">
@@ -59,6 +61,11 @@
             <ul class="counted-list_list">
             </ul>
         </div>
+
+        <p class="hm-source">
+            <span>Source</span>:
+            <a href=""></a>
+        </p>
 
         <nav class="game-selection cf">
             <ul data-lang="en" data-language="English" class="game-selection_list">
@@ -93,7 +100,7 @@
         </nav>
 
         <footer>
-            &copy; 2012 by Matthias Reuter | <a href="mailto:howmany@gweax.de" class="footer-link">Contact</a> | <a href="https://github.com/gweax/howmany" class="footer-link">Code at github</a>
+            &copy; 2012-2023 by Matthias Reuter | <a href="mailto:howmany@gweax.de" class="footer-link">Contact</a> | <a href="https://github.com/gweax/howmany" class="footer-link">Code at github</a>
         </footer>
 
         <script src="js/I18n.js"></script>
@@ -110,7 +117,8 @@
                 "h1": "longTitle",
                 ".hm-instructions": "instructions",
                 ".game-control_button-start": "Start Game",
-                ".game-control_button-cancel": "Give up"
+                ".game-control_button-cancel": "Give up",
+                ".hm-source span": "source"
             };
 
             for (selector in domStrings) {

@@ -4,8 +4,9 @@
         "category": "Computer",
         "title": "Ubuntu code names",
         "minutes": 3,
-        "description": "Up to version 22.04",
-        "source": "http://en.wikipedia.org/wiki/Ubuntu_(operating_system)#Releases",
+        "description": "Up to version 24.04",
+        "source": "https://en.wikipedia.org/wiki/Ubuntu_(operating_system)#Releases",
+        "label": "Code Name",
         "items": [
             "Warty Warthog",
             "Hoary Hedgehog",
@@ -42,7 +43,10 @@
             "Groovy Gorilla",
             "Hirsute Hippo",
             "Impish Indri",
-            "Jammy Jellyfish"
+            "Jammy Jellyfish",
+            "Lunar Lobster",
+            "Mantic Minotaur",
+            "Noble Numbat"
         ]
     }
 }

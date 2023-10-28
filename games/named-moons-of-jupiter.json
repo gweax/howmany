@@ -5,7 +5,8 @@
         "title": "Named Moons of Jupiter",
         "description": "We're looking for the named moons only. Don't care about S/2001 J 2 and so on",
         "minutes": 3,
-        "source": "http://en.wikipedia.org/wiki/Moons_of_Jupiter",
+        "source": "https://en.wikipedia.org/wiki/Moons_of_Jupiter",
+        "label": "Name",
         "items": [
             "Metis",
             "Adrastea",

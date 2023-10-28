@@ -5,7 +5,8 @@
         "title": "The Beatles Number 1 hits in the US",
         "description": "",
         "minutes": 2,
-        "source": "http://en.wikipedia.org/wiki/The_Beatles_discography#Singles",
+        "source": "https://en.wikipedia.org/wiki/The_Beatles_discography#Singles",
+        "label": "Song title",
         "items": [
             "Love Me Do",
             "She Loves You",

@@ -3,9 +3,10 @@
         "name": "deutsche-bundeskanzler",
         "category": "Politics",
         "title": "Deutsche Bundeskanzler",
-        "description": "Gesucht sind die Bundeskanzler seit 1949",
+        "description": "Gesucht sind die Bundeskanzler 1949-2023",
         "minutes": 1,
-        "source": "http://de.wikipedia.org/wiki/Bundeskanzler_(Deutschland)#Deutsche_Bundeskanzler_seit_1949",
+        "source": "https://de.wikipedia.org/wiki/Bundeskanzler_(Deutschland)#Deutsche_Bundeskanzler_seit_1949",
+        "label": "Name",
         "items": [
             "Konrad Adenauer|Adenauer",
             "Ludwig Erhard|Erhard",
@@ -15,7 +16,8 @@
             "Helmut Schmidt|Schmidt",
             "Helmut Kohl|Kohl",
             "Gerhard Schröder|Schröder",
-            "Angela Merkel|Merkel"
+            "Angela Merkel|Merkel",
+            "Olaf Scholz|Scholz"
         ]
     }
 }

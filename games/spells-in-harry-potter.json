@@ -5,7 +5,8 @@
         "title": "Spells in Harry Potter",
         "description": "",
         "minutes": 3,
-        "source": "http://en.wikipedia.org/wiki/Spells_in_Harry_Potter",
+        "source": "https://en.wikipedia.org/wiki/Spells_in_Harry_Potter",
+        "label": "Spell",
         "items": [
             "Accio",
             "Aguamenti",

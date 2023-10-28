@@ -6,6 +6,7 @@
         "description": "Without the deprecated ones",
         "minutes": 5,
         "source": "https://developer.mozilla.org/en-US/docs/Web/HTML/Element",
+        "label": "Element",
         "items": [
             "a",
             "abbr",
@@ -90,6 +91,7 @@
             "s",
             "samp",
             "script",
+            "search",
             "section",
             "select",
             "slot",
@@ -127,6 +129,7 @@
         "description": "Ohne die, die deprecated sind",
         "minutes": 5,
         "source": "https://developer.mozilla.org/en-US/docs/Web/HTML/Element",
+        "label": "Element",
         "items": [
             "a",
             "abbr",
@@ -211,6 +214,7 @@
             "s",
             "samp",
             "script",
+            "search",
             "section",
             "select",
             "slot",
