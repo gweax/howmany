@@ -3,7 +3,7 @@
 Play at https://gweax.github.io/howmany/
 
 Howmany - See how many US States you can think of in 5 minutes (and other things)
-Copyright (C) 2012 Matthias Reuter
+Copyright (C) 2012-2023 Matthias Reuter
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
